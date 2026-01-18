@@ -66,8 +66,9 @@ with open("phonebook.csv", "w", encoding="utf-8", newline='') as f:
     datawriter = csv.writer(f, delimiter=',')
     datawriter.writerows(final_list)
 
-if len(unique_contacts) >= 7:
+if len(unique_contacts) > 7:
+    print(f"Обработано записей: {len(unique_contacts)}")
+elif len(unique_contacts) == 7:
     print(f"Получено: {len(unique_contacts)}")
 else:
     print(f"Обработано записей: {len(unique_contacts)}!")
-
